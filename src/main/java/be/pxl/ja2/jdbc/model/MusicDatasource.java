@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @Copyright timbuchalka on 9/12/16
  */
-public class MusicDatasource {
+public class MusicDatasource implements AutoCloseable {
 
 	private static final String DB_NAME = "musicdb";
 
@@ -89,6 +89,7 @@ public class MusicDatasource {
 		}
 	}
 
+	@Override
 	public void close() {
 		try {
 			//	if (querySongInfo != null) {
